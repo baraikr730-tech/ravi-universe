@@ -1,0 +1,1061 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#030611">
+<meta name="description" content="Explore the digital universe of Ravi Baraik. Technology, creativity and personal journey.">
+
+<title>Ravi Baraik | Personal Universe</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --blue: #65c7ff;
+  --purple: #a77aff;
+  --bg: #030611;
+  --text: #f5f7ff;
+  --muted: #9ba9c5;
+  --glass: rgba(17,27,55,.55);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+/* BACKGROUND */
+
+.space {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(ellipse at 50% 40%, #101c45 0%, #080d22 40%, #02040c 100%);
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.aurora {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: .15;
+  z-index: -1;
+  pointer-events: none;
+  animation: aurora 15s ease-in-out infinite alternate;
+}
+
+.aurora.one {
+  background: #236bff;
+  top: 5%;
+  left: -200px;
+}
+
+.aurora.two {
+  background: #a12aff;
+  right: -200px;
+  bottom: 5%;
+  animation-delay: -7s;
+}
+
+@keyframes aurora {
+  to {
+    transform: translate(130px,80px) scale(1.3);
+  }
+}
+
+/* SCROLL PROGRESS */
+
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg,var(--blue),var(--purple));
+  z-index: 9999;
+  box-shadow: 0 0 12px var(--blue);
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 20px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(3,6,17,.78);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid #ffffff12;
+}
+
+.logo {
+  font-family: 'Orbitron',sans-serif;
+  color: var(--blue);
+  font-size: 23px;
+  letter-spacing: 3px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #bdc8e1;
+  font-size: 12px;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  color: white;
+  border: 1px solid #ffffff35;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 20px;
+}
+
+/* COMMON */
+
+section {
+  padding: 100px 8%;
+}
+
+.section-heading {
+  font-family: 'Orbitron',sans-serif;
+  font-size: clamp(25px,4vw,36px);
+  color: var(--blue);
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 55px;
+  line-height: 1.8;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.system-tag {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #5c9fff66;
+  border-radius: 30px;
+  color: var(--blue);
+  background: #1c3a7025;
+  letter-spacing: 3px;
+  font-size: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 25px #2674ff20;
+}
+
+.hero h1 {
+  font-family: 'Orbitron',sans-serif;
+  font-size: clamp(35px,7vw,75px);
+  line-height: 1.3;
+  letter-spacing: 2px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg,#60c9ff,#a17aff,#65e4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-description {
+  color: var(--muted);
+  max-width: 650px;
+  line-height: 2;
+  margin-top: 22px;
+  font-size: 14px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 27px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 12px;
+  transition: .3s;
+}
+
+.btn-primary {
+  background: linear-gradient(100deg,#2563eb,#854dff);
+  color: white;
+  box-shadow: 0 0 25px #3476ff50;
+}
+
+.btn-outline {
+  border: 1px solid #68baff;
+  color: var(--blue);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px #458dff70;
+}
+
+/* DIGITAL STATUS */
+
+.system-status {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 55px;
+  color: #94a9ca;
+  font-size: 11px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #55e6a5;
+  box-shadow: 0 0 12px #55e6a5;
+  margin-right: 7px;
+}
+
+/* PROFILE */
+
+.profile-section {
+  display: flex;
+  justify-content: center;
+  padding: 45px 20px 120px;
+}
+
+.scene {
+  width: 260px;
+  height: 340px;
+  perspective: 1200px;
+  position: relative;
+  touch-action: pan-y;
+}
+
+.orbit {
+  position: absolute;
+  inset: -35px -55px;
+  border: 1px solid #428cff85;
+  border-radius: 50%;
+  transform: rotate(-25deg);
+  box-shadow: 0 0 25px #377aff35;
+  pointer-events: none;
+}
+
+.orbit.two {
+  inset: -50px -35px;
+  border-color: #a45bff90;
+  transform: rotate(35deg);
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--blue);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--blue);
+  top: 15%;
+  right: 5%;
+}
+
+.profile-card {
+  width: 100%;
+  height: 100%;
+  padding: 9px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .18s ease-out;
+  border: 1px solid var(--blue);
+  border-radius: 25px;
+  background: linear-gradient(145deg,#193568,#080d20);
+  box-shadow: 0 0 45px #367aff50;
+}
+
+.profile-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  transform: translateZ(30px);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 9px;
+  border-radius: 18px;
+  background: linear-gradient(145deg,#ffffff20,transparent 45%);
+  pointer-events: none;
+  transform: translateZ(35px);
+}
+
+/* ABOUT */
+
+.about-box {
+  max-width: 850px;
+  margin: auto;
+  padding: 35px;
+  border: 1px solid #4e87ff40;
+  background: var(--glass);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 0 35px #2755aa15;
+}
+
+.about-box p {
+  color: #aab8d4;
+  line-height: 2.1;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* JOURNEY */
+
+.journey {
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+}
+
+.journey::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 5px;
+  bottom: 5px;
+  width: 2px;
+  background: linear-gradient(var(--blue),var(--purple));
+}
+
+.journey-item {
+  position: relative;
+  padding: 0 0 35px 38px;
+}
+
+.journey-item::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 15px var(--blue);
+}
+
+.journey-item h3 {
+  color: var(--blue);
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.journey-item p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* INTERESTS */
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 20px;
+}
+
+.interest-card {
+  padding: 30px 20px;
+  border-radius: 18px;
+  border: 1px solid #518fff45;
+  background: var(--glass);
+  text-align: center;
+  transition: .35s;
+}
+
+.interest-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--blue);
+  box-shadow: 0 0 30px #3476ff25;
+}
+
+.interest-icon {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.interest-card h3 {
+  font-size: 14px;
+  color: #d7e7ff;
+  margin-bottom: 9px;
+}
+
+.interest-card p {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* CONNECT */
+
+.connect-box {
+  max-width: 650px;
+  margin: auto;
+  padding: 40px 20px;
+  border-radius: 20px;
+  border: 1px solid #5d8fff50;
+  background: var(--glass);
+  text-align: center;
+}
+
+.connect-box p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.socials a {
+  text-decoration: none;
+  padding: 12px 20px;
+  border: 1px solid #568fff80;
+  border-radius: 12px;
+  color: #c6dcff;
+  font-size: 12px;
+  transition: .3s;
+}
+
+.socials a:hover {
+  background: #245acb;
+  color: white;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1px solid #ffffff15;
+  color: #8291ad;
+  font-size: 11px;
+}
+
+.footer-logo {
+  color: var(--blue);
+  font-family: 'Orbitron',sans-serif;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+}
+
+/* BACK TO TOP */
+
+#topButton {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: #17458c;
+  color: white;
+  border: 1px solid var(--blue);
+  font-size: 19px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s;
+  z-index: 50;
+}
+
+#topButton.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+  header {
+    padding: 18px 6%;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    flex-direction: column;
+    background: rgba(4,8,24,.97);
+    border-bottom: 1px solid #ffffff20;
+    gap: 22px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 570px;
+    padding: 85px 20px 55px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .scene {
+    width: 225px;
+    height: 300px;
+  }
+
+  section {
+    padding: 75px 7%;
+  }
+
+  .about-box {
+    padding: 25px 18px;
+  }
+
+  .system-status {
+    gap: 15px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="progress"></div>
+
+<div class="space"></div>
+<canvas id="stars"></canvas>
+<div class="aurora one"></div>
+<div class="aurora two"></div>
+
+<!-- NAVBAR -->
+
+<header>
+  <div class="logo">RAVI.</div>
+
+  <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+  <nav id="nav">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#journey">JOURNEY</a>
+    <a href="#interests">INTERESTS</a>
+    <a href="#connect">CONNECT</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="system-tag reveal">
+    ✦ WELCOME TO MY DIGITAL UNIVERSE ✦
+  </div>
+
+  <h1 class="reveal">
+    I'M <span class="gradient-text">RAVI BARAIK.</span>
+  </h1>
+
+  <p class="hero-description reveal">
+    An explorer of technology, science and creativity.
+    Discovering new possibilities and building my own
+    place in the digital universe.
+  </p>
+
+  <div class="hero-buttons reveal">
+    <a href="#about" class="btn btn-primary">EXPLORE MY WORLD ↗</a>
+    <a href="#connect" class="btn btn-outline">CONNECT WITH ME</a>
+  </div>
+
+  <div class="system-status reveal">
+    <span><i class="status-dot"></i> SYSTEM ONLINE</span>
+    <span>✦ DIGITAL EXPLORER</span>
+    <span id="clock">00:00:00</span>
+  </div>
+
+</section>
+
+<!-- PROFILE -->
+
+<section class="profile-section">
+
+  <div class="scene" id="scene">
+
+    <div class="orbit"></div>
+    <div class="orbit two"></div>
+    <div class="orbit-dot"></div>
+
+    <div class="profile-card" id="card">
+      <img src="profile.jpg" alt="Ravi Baraik profile photograph">
+      <div class="card-overlay"></div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <h2 class="section-heading reveal">ABOUT MYSELF</h2>
+
+  <p class="section-subtitle reveal">
+    A little introduction to the person behind this universe.
+  </p>
+
+  <div class="about-box reveal">
+    <p>
+      Hello! I am Ravi Baraik.
+
+      I am someone who enjoys exploring the world of
+      technology, science and digital creativity.
+
+      I believe that learning never stops. Every new idea
+      is an opportunity to understand something better,
+      develop new skills and create something meaningful.
+
+      This website represents my interests, personality
+      and my journey into the digital world.
+    </p>
+  </div>
+
+</section>
+
+<!-- JOURNEY -->
+
+<section id="journey">
+
+  <h2 class="section-heading reveal">MY JOURNEY</h2>
+
+  <p class="section-subtitle reveal">
+    Every beginning is an opportunity to explore.
+  </p>
+
+  <div class="journey">
+
+    <div class="journey-item reveal">
+      <h3>Curiosity</h3>
+      <p>
+        Developing an interest in science, technology
+        and understanding how the digital world works.
+      </p>
+    </div>
+
+    <div class="journey-item reveal">
+      <h3>Learning</h3>
+      <p>
+        Exploring web development, computer technology
+        and creative digital tools.
+      </p>
+    </div>
+
+    <div class="journey-item reveal">
+      <h3>Creating</h3>
+      <p>
+        Turning ideas into digital experiences through
+        experimentation and practical projects.
+      </p>
+    </div>
+
+    <div class="journey-item reveal">
+      <h3>What's Next?</h3>
+      <p>
+        Exploring new technologies and discovering
+        what I can build in the future.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- INTERESTS -->
+
+<section id="interests">
+
+  <h2 class="section-heading reveal">MY INTERESTS</h2>
+
+  <p class="section-subtitle reveal">
+    Things that inspire my curiosity.
+  </p>
+
+  <div class="interest-grid">
+
+    <div class="interest-card reveal">
+      <div class="interest-icon">💻</div>
+      <h3>Technology</h3>
+      <p>Exploring computers and modern digital systems.</p>
+    </div>
+
+    <div class="interest-card reveal">
+      <div class="interest-icon">🌌</div>
+      <h3>Space & Science</h3>
+      <p>Discovering the universe and scientific ideas.</p>
+    </div>
+
+    <div class="interest-card reveal">
+      <div class="interest-icon">🤖</div>
+      <h3>Artificial Intelligence</h3>
+      <p>Exploring the possibilities of intelligent technology.</p>
+    </div>
+
+    <div class="interest-card reveal">
+      <div class="interest-icon">🎨</div>
+      <h3>Creativity</h3>
+      <p>Turning imagination into digital experiences.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONNECT -->
+
+<section id="connect">
+
+  <h2 class="section-heading reveal">LET'S CONNECT</h2>
+
+  <p class="section-subtitle reveal">
+    Find me across the digital universe.
+  </p>
+
+  <div class="connect-box reveal">
+
+    <p>
+      Thanks for exploring my digital space.
+      You can connect with me through my social platforms.
+    </p>
+
+    <div class="socials">
+
+      <a href="https://www.instagram.com/ravibaraik._?hvrq=ODZ0bjlubHRvNGxr"
+      target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+
+      <a href="https://www.facebook.com/share/p/1GoT82D7HD/"
+      target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+
+      <a href="https://x.com/RaviBaraik23246"
+      target="_blank" rel="noopener noreferrer">X / Twitter ↗</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">RAVI.</div>
+  <p>© 2026 Ravi Baraik. All Rights Reserved.</p>
+  <p style="margin-top:8px">Exploring Beyond Limits ✦</p>
+</footer>
+
+<button id="topButton" aria-label="Back to top">↑</button>
+
+<script>
+
+/* SPACE PARTICLES */
+
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+
+let stars = [];
+let w, h;
+let animationFrame;
+
+function resizeCanvas() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+  w = window.innerWidth;
+  h = window.innerHeight;
+
+  canvas.width = w * dpr;
+  canvas.height = h * dpr;
+
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+
+  const count = Math.min(180, Math.floor(w * h / 6500));
+
+  stars = [];
+
+  for (let i = 0; i < count; i++) {
+    stars.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      size: Math.random() * 1.5 + .3,
+      speed: Math.random() * .35 + .08,
+      phase: Math.random() * Math.PI * 2
+    });
+  }
+}
+
+function animateStars() {
+  ctx.clearRect(0,0,w,h);
+
+  stars.forEach(star => {
+
+    star.y -= star.speed;
+
+    if (star.y < 0) {
+      star.y = h;
+      star.x = Math.random() * w;
+    }
+
+    star.phase += .015;
+
+    const alpha = .3 + Math.abs(Math.sin(star.phase)) * .7;
+
+    ctx.beginPath();
+    ctx.arc(star.x,star.y,star.size,0,Math.PI*2);
+
+    ctx.fillStyle = `rgba(155,205,255,${alpha})`;
+    ctx.shadowBlur = 8;
+    ctx.shadowColor = "#65aaff";
+    ctx.fill();
+
+  });
+
+  animationFrame = requestAnimationFrame(animateStars);
+}
+
+resizeCanvas();
+animateStars();
+
+let resizeTimer;
+
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(resizeCanvas,150);
+});
+
+/* 3D INTERACTIVE PROFILE */
+
+const scene = document.getElementById("scene");
+const card = document.getElementById("card");
+
+scene.addEventListener("pointermove", e => {
+
+  const rect = scene.getBoundingClientRect();
+
+  const x = (e.clientX - rect.left) / rect.width;
+  const y = (e.clientY - rect.top) / rect.height;
+
+  const rotateY = (x - .5) * 30;
+  const rotateX = (.5 - y) * 30;
+
+  card.style.transform =
+    `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+});
+
+scene.addEventListener("pointerleave", () => {
+  card.style.transform = "rotateX(0deg) rotateY(0deg)";
+});
+
+/* SCROLL REVEAL */
+
+const observer = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+
+  });
+
+}, {
+  threshold: .12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+
+/* DIGITAL CLOCK */
+
+function updateClock() {
+
+  const now = new Date();
+
+  document.getElementById("clock").textContent =
+    now.toLocaleTimeString("en-IN", {
+      hour12: false
+    });
+
+}
+
+updateClock();
+setInterval(updateClock,1000);
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+
+menuBtn.addEventListener("click", () => {
+
+  const opened = nav.classList.toggle("active");
+
+  menuBtn.textContent = opened ? "✕" : "☰";
+  menuBtn.setAttribute("aria-expanded", opened);
+
+});
+
+nav.querySelectorAll("a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    nav.classList.remove("active");
+    menuBtn.textContent = "☰";
+    menuBtn.setAttribute("aria-expanded","false");
+
+  });
+
+});
+
+/* SCROLL PROGRESS + TOP BUTTON */
+
+const progress = document.getElementById("progress");
+const topButton = document.getElementById("topButton");
+
+window.addEventListener("scroll", () => {
+
+  const maxScroll =
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  const percentage = maxScroll > 0
+    ? (window.scrollY / maxScroll) * 100
+    : 0;
+
+  progress.style.width = percentage + "%";
+
+  topButton.classList.toggle("show",window.scrollY > 400);
+
+});
+
+topButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+</script>
+
+</body>
+</html>
